@@ -149,44 +149,44 @@ Twinkle.config.sections = [
 
 		// TwinkleConfig.deletionSummaryAd (string)
 		// Text to be appended to the edit summary of deletions made using Twinkle
-		{
-			name: "deletionSummaryAd",
-			label: wgULS("删除摘要后缀", "刪除摘要後綴"),
-			helptip: wgULS("通常和编辑摘要后缀一样。", "通常和編輯摘要後綴一樣。"),
-			adminOnly: true,
-			type: "string"
-		},
+		// {
+		// 	name: "deletionSummaryAd",
+		// 	label: wgULS("删除摘要后缀", "刪除摘要後綴"),
+		// 	helptip: wgULS("通常和编辑摘要后缀一样。", "通常和編輯摘要後綴一樣。"),
+		// 	adminOnly: true,
+		// 	type: "string"
+		// },
 
 		// TwinkleConfig.protectionSummaryAd (string)
 		// Text to be appended to the edit summary of page protections made using Twinkle
-		{
-			name: "protectionSummaryAd",
-			label: wgULS("保护摘要后缀", "保護摘要後綴"),
-			helptip: wgULS("通常和编辑摘要后缀一样。", "通常和編輯摘要後綴一樣。"),
-			adminOnly: true,
-			type: "string"
-		},
+		// {
+		// 	name: "protectionSummaryAd",
+		// 	label: wgULS("保护摘要后缀", "保護摘要後綴"),
+		// 	helptip: wgULS("通常和编辑摘要后缀一样。", "通常和編輯摘要後綴一樣。"),
+		// 	adminOnly: true,
+		// 	type: "string"
+		// },
 
 		// TwinkleConfig.blockSummaryAd (string)
 		// Text to be appended to the edit summary of block made using Twinkle
-		{
-			name: "blockSummaryAd",
-			label: wgULS("封禁摘要后缀", "封禁摘要後綴"),
-			helptip: wgULS("通常和编辑摘要后缀一样。", "通常和編輯摘要後綴一樣。"),
-			adminOnly: true,
-			type: "string"
-		},
+		// {
+		// 	name: "blockSummaryAd",
+		// 	label: wgULS("封禁摘要后缀", "封禁摘要後綴"),
+		// 	helptip: wgULS("通常和编辑摘要后缀一样。", "通常和編輯摘要後綴一樣。"),
+		// 	adminOnly: true,
+		// 	type: "string"
+		// },
 
 		// TwinkleConfig.userTalkPageMode may take arguments:
 		// 'window': open a new window, remember the opened window
 		// 'tab': opens in a new tab, if possible.
 		// 'blank': force open in a new window, even if such a window exists
-		{
-			name: "userTalkPageMode",
-			label: wgULS("当要打开用户对话页时，", "當要開啟用戶對話頁時，"),
-			type: "enum",
-			enumValues: Twinkle.config.commonEnums.talkPageMode
-		},
+		// {
+		// 	name: "userTalkPageMode",
+		// 	label: wgULS("当要打开用户对话页时，", "當要開啟用戶對話頁時，"),
+		// 	type: "enum",
+		// 	enumValues: Twinkle.config.commonEnums.talkPageMode
+		// },
 
 		// TwinkleConfig.dialogLargeFont (boolean)
 		{
@@ -197,7 +197,7 @@ Twinkle.config.sections = [
 	]
 },
 
-{
+/*{
 	title: wgULS("图片删除", "圖片刪除"),
 	preferences: [
 		// TwinkleConfig.notifyUserOnDeli (boolean)
@@ -226,7 +226,7 @@ Twinkle.config.sections = [
 			enumValues: Twinkle.config.commonEnums.watchlist
 		}
 	]
-},
+},*/
 
 {
 	title: "回退",  // twinklefluff module
@@ -311,7 +311,7 @@ Twinkle.config.sections = [
 	]
 },
 
-{
+/*{
 	title: wgULS("共享IP标记", "共享IP標記"),
 	inFriendlyConfig: true,
 	preferences: [
@@ -321,7 +321,7 @@ Twinkle.config.sections = [
 			type: "boolean"
 		}
 	]
-},
+},*/
 
 {
 	title: wgULS("快速删除", "快速刪除"),
@@ -466,7 +466,7 @@ Twinkle.config.sections = [
 	]
 },
 
-{
+/*{
 	title: wgULS("标记", "標記"),
 	inFriendlyConfig: true,
 	preferences: [
@@ -510,9 +510,9 @@ Twinkle.config.sections = [
 			customListLabelTitle: wgULS("显示的文字", "顯示的文字")
 		}
 	]
-},
+},*/
 
-{
+/*{
 	title: wgULS("回复", "回覆"),
 	inFriendlyConfig: true,
 	preferences: [
@@ -538,9 +538,9 @@ Twinkle.config.sections = [
 			type: "string"
 		}
 	]
-},
+},*/
 
-{
+/*{
 	title: wgULS("反链", "反連"),
 	preferences: [
 		// TwinkleConfig.unlinkNamespaces (array)
@@ -553,9 +553,9 @@ Twinkle.config.sections = [
 			setValues: Twinkle.config.commonSets.namespacesNoSpecial
 		}
 	]
-},
+},*/
 
-{
+/*{
 	title: wgULS("警告用户", "警告用戶"),
 	preferences: [
 		// TwinkleConfig.defaultWarningGroup (int)
@@ -619,9 +619,9 @@ Twinkle.config.sections = [
 			type: "boolean"
 		}
 	]
-},
+},*/
 
-{
+/*{
 	title: wgULS("封禁", "封禁"),
 	preferences: [
 		{
@@ -633,7 +633,7 @@ Twinkle.config.sections = [
 			customListLabelTitle: wgULS("「由于…您已被封禁」及封禁日志理由", "「由於…您已被封禁」及封禁日誌理由")
 		}
 	]
-},
+},*/
 
 {
 	title: wgULS("存废讨论", "存廢討論"),
@@ -700,40 +700,40 @@ Twinkle.config.sections = [
 			})
 		},
 
-		{
-			name: "afdFameDefaultReason",
-			label: wgULS("默认关注度提删理由", "預設關注度提刪理由"),
-			helptip: wgULS("用于批量提删。", "用於批量提刪。"),
-			type: "string"
-		},
+		// {
+		// 	name: "afdFameDefaultReason",
+		// 	label: wgULS("默认关注度提删理由", "預設關注度提刪理由"),
+		// 	helptip: wgULS("用于批量提删。", "用於批量提刪。"),
+		// 	type: "string"
+		// },
 
-		{
-			name: "afdSubstubDefaultReason",
-			label: wgULS("默认小小作品提删理由", "預設小小作品提刪理由"),
-			helptip: wgULS("用于批量提删。", "用於批量提刪。"),
-			type: "string"
-		},
+		// {
+		// 	name: "afdSubstubDefaultReason",
+		// 	label: wgULS("默认小小作品提删理由", "預設小小作品提刪理由"),
+		// 	helptip: wgULS("用于批量提删。", "用於批量提刪。"),
+		// 	type: "string"
+		// },
 
-		{
-			name: "XfdClose",
-			label: wgULS("在存废讨论显示关闭讨论按钮", "在存廢討論顯示關閉討論按鈕"),
-			helptip: wgULS("请确保您充分了解[[Wikipedia:关闭删除讨论指南]]才开启此功能。", "請確保您充分了解[[Wikipedia:關閉刪除討論指南]]才開啟此功能。"),
-			type: "enum",
-			enumValues: wgULS({
-				"hide": "不显示",
-				"nonadminonly": "只包含非管理员可使用选项",
-				"all": "显示所有选项"
-			}, {
-				"hide": "不顯示",
-				"nonadminonly": "只包含非管理員可使用選項",
-				"all": "顯示所有選項"
-			})
-		},
+		// {
+		// 	name: "XfdClose",
+		// 	label: wgULS("在存废讨论显示关闭讨论按钮", "在存廢討論顯示關閉討論按鈕"),
+		// 	helptip: wgULS("请确保您充分了解[[Wikipedia:关闭删除讨论指南]]才开启此功能。", "請確保您充分了解[[Wikipedia:關閉刪除討論指南]]才開啟此功能。"),
+		// 	type: "enum",
+		// 	enumValues: wgULS({
+		// 		"hide": "不显示",
+		// 		"nonadminonly": "只包含非管理员可使用选项",
+		// 		"all": "显示所有选项"
+		// 	}, {
+		// 		"hide": "不顯示",
+		// 		"nonadminonly": "只包含非管理員可使用選項",
+		// 		"all": "顯示所有選項"
+		// 	})
+		// },
 	]
 
 },
 
-{
+/*{
 	title: wgULS("侵犯版权", "侵犯版權"),
 	preferences: [
 		// TwinkleConfig.copyvioWatchPage (string)
@@ -774,7 +774,7 @@ Twinkle.config.sections = [
 		},
 
 	]
-},
+},*/
 
 {
 	title: wgULS("隐藏", "隱藏"),

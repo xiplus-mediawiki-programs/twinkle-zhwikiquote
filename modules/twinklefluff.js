@@ -577,7 +577,7 @@ Twinkle.fluff.callbacks = {
 			}
 			userHasAlreadyConfirmedAction = true;
 
-			summary = Twinkle.fluff.formatSummary(wgULS("回退$USER做出的出于[[w:WP:AGF|善意]]的编辑", "回退$USER做出的出於[[w:WP:AGF|善意]]的編輯"), self.params.user, extra_summary);
+			summary = Twinkle.fluff.formatSummary(wgULS("回退$USER做出的出于[[WQ:AGF|善意]]的编辑", "回退$USER做出的出於[[WQ:AGF|善意]]的編輯"), self.params.user, extra_summary);
 			break;
 
 		case 'vand':

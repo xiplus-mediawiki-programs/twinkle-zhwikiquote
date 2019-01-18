@@ -872,7 +872,7 @@ Twinkle.speedy.callbacks = {
 					params.normalized !== 'o1' &&
 					document.getElementById( 'ca-talk' ).className !== 'new') {
 				var talkpage = new Morebits.wiki.page( Morebits.wikipedia.namespaces[ mw.config.get('wgNamespaceNumber') + 1 ] + ':' + mw.config.get('wgTitle'), wgULS("删除讨论页", "刪除討論頁") );
-				talkpage.setEditSummary('[[WP:CSD#G15|G15]]: 孤立页面: 已删除页面“' + Morebits.pageNameNorm + "”的讨论页" + Twinkle.getPref('deletionSummaryAd'));
+				talkpage.setEditSummary('[[WQ:CSD|G15]]: 孤立页面: 已删除页面“' + Morebits.pageNameNorm + "”的讨论页" + Twinkle.getPref('deletionSummaryAd'));
 				talkpage.setTags(Twinkle.getPref('revisionTags'));
 				talkpage.deletePage();
 				// this is ugly, but because of the architecture of wiki.api, it is needed
@@ -1031,7 +1031,7 @@ Twinkle.speedy.callbacks = {
 			$snapshot.each(function(key, value) {
 				var title = $(value).attr('title');
 				var page = new Morebits.wiki.page(title, wgULS('删除重定向 "', '刪除重定向 "') + title + '"');
-				page.setEditSummary('[[WP:CSD#G15|G15]]: 孤立页面: 重定向到已删除页面“' + Morebits.pageNameNorm + "”" + Twinkle.getPref('deletionSummaryAd'));
+				page.setEditSummary('[[WQ:CSD|G15]]: 孤立页面: 重定向到已删除页面“' + Morebits.pageNameNorm + "”" + Twinkle.getPref('deletionSummaryAd'));
 				page.setTags(Twinkle.getPref('revisionTags'));
 				page.deletePage(onsuccess);
 			});
@@ -1103,15 +1103,15 @@ Twinkle.speedy.callbacks = {
 				editsummary = '请求快速删除（';
 				$.each(params.normalizeds, function(index, norm) {
 					if (norm !== "db") {
-						editsummary += '[[WP:CSD#' + norm.toUpperCase() + '|CSD ' + norm.toUpperCase() + ']]、';
+						editsummary += '[[WQ:CSD|CSD ' + norm.toUpperCase() + ']]、';
 					}
 				});
 				editsummary = editsummary.substr(0, editsummary.length - 1); // remove trailing comma
 				editsummary += '）。';
 			} else if (params.normalizeds[0] === "db") {
-				editsummary = '请求[[WP:CSD|快速删除]]：' + params.templateParams[0]["1"];
+				editsummary = '请求[[WQ:CSD|快速删除]]：' + params.templateParams[0]["1"];
 			} else {
-				editsummary = "请求快速删除（[[WP:CSD#" + params.normalizeds[0].toUpperCase() + "|CSD " + params.normalizeds[0].toUpperCase() + "]]）";
+				editsummary = "请求快速删除（[[WQ:CSD|CSD " + params.normalizeds[0].toUpperCase() + "]]）";
 			}
 
 			pageobj.setPageText(code + "\n" + text);
@@ -1203,9 +1203,9 @@ Twinkle.speedy.callbacks = {
 			// add blurb if log page doesn't exist
 			if (!pageobj.exists()) {
 				appendText +=
-					"这是该用户使用[[WP:TW|Twinkle]]的速删模块做出的[[WP:CSD|快速删除]]提名列表。\n\n" +
+					"这是该用户使用[[WQ:TW|Twinkle]]的速删模块做出的[[WQ:CSD|快速删除]]提名列表。\n\n" +
 					"如果您不再想保留此日志，请在[[" + Twinkle.getPref('configPage') + "|参数设置]]中关掉，并" +
-					"使用[[WP:CSD#O1|CSD O1]]提交快速删除。\n";
+					"使用[[WQ:CSD|CSD O1]]提交快速删除。\n";
 				if (Morebits.userIsInGroup("sysop")) {
 					appendText += "\n此日志并不记录用Twinkle直接执行的删除。\n";
 				}
@@ -1221,22 +1221,22 @@ Twinkle.speedy.callbacks = {
 			appendText += "\n# [[:" + Morebits.pageNameNorm + "]]: ";
 			if (params.fromDI) {
 				if (params.normalized === "f3 f4") {
-					appendText += "图版[[WP:CSD#F3|CSD F3]]+[[WP:CSD#F4|CSD F4]]（{{tl|no source no license/auto}}）";
+					appendText += "图版[[WQ:CSD|CSD F3]]+[[WQ:CSD|CSD F4]]（{{tl|no source no license/auto}}）";
 				} else {
-					appendText += "图版[[WP:CSD#" + params.normalized.toUpperCase() + "|CSD " + params.normalized.toUpperCase() + "]]（{{tl|" + params.templatename + "}}）"
+					appendText += "图版[[WQ:CSD|CSD " + params.normalized.toUpperCase() + "]]（{{tl|" + params.templatename + "}}）"
 				}
 			} else {
 				if (params.normalizeds.length > 1) {
 					appendText += "多个理由（";
 					$.each(params.normalizeds, function(index, norm) {
-						appendText += "[[WP:CSD#" + norm.toUpperCase() + "|" + norm.toUpperCase() + ']]、';
+						appendText += "[[WQ:CSD|" + norm.toUpperCase() + ']]、';
 					});
 					appendText = appendText.substr(0, appendText.length - 1);  // remove trailing comma
 					appendText += '）';
 				} else if (params.normalizeds[0] === "db") {
 					appendText += "自定义理由";
 				} else {
-					appendText += "[[WP:CSD#" + params.normalizeds[0].toUpperCase() + "|CSD " + params.normalizeds[0].toUpperCase() + "]]";
+					appendText += "[[WQ:CSD|CSD " + params.normalizeds[0].toUpperCase() + "]]";
 				}
 			}
 

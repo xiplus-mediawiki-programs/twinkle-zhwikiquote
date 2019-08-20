@@ -68,10 +68,10 @@ Twinkle.defaultConfig = {};
  */
 Twinkle.defaultConfig.twinkle = {
 	// General
-	summaryAd: ' ([[User:Xiplus/Twinkle|TW]])',
-	deletionSummaryAd: ' ([[User:Xiplus/Twinkle|TW]])',
-	protectionSummaryAd: ' ([[User:Xiplus/Twinkle|TW]])',
-	blockSummaryAd: ' ([[User:Xiplus/Twinkle|TW]])',
+	summaryAd: '',
+	deletionSummaryAd: '',
+	protectionSummaryAd: '',
+	blockSummaryAd: '',
 	userTalkPageMode: 'tab',
 	dialogLargeFont: false,
 
@@ -148,9 +148,9 @@ Twinkle.defaultConfig.twinkle = {
 	batchundeleteChunks: 50,
 	proddeleteChunks: 50,
 	revisionTags: 'Twinkle',
-	configPage: 'User:Xiplus/Twinkle/參數設置',
+	configPage: 'Wikiquote:Twinkle/参数设置',
 	projectNamespaceName: mw.config.get('wgFormattedNamespaces')[4],
-	sandboxPage: 'Wikipedia:沙盒'
+	sandboxPage: 'Wikiquote:沙盒'
 };
 
 // now some skin dependent config.

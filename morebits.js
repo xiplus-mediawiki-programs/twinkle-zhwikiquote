@@ -2051,7 +2051,7 @@ Morebits.wiki.page = function(pageName, currentAction) {
 			tags: ctx.tags,
 			title: ctx.pageName,
 			summary: ctx.editSummary,
-			token: canUseMwUserToken ? mw.user.tokens.get('editToken') : ctx.editToken,
+			token: canUseMwUserToken ? mw.user.tokens.get('csrfToken') : ctx.editToken,
 			watchlist: ctx.watchlistOption
 		};
 
@@ -2381,7 +2381,7 @@ Morebits.wiki.page = function(pageName, currentAction) {
 			}
 		}
 
-		return !!mw.user.tokens.get('editToken');
+		return !!mw.user.tokens.get('csrfToken');
 	};
 
 	// callback from loadSuccess() for append() and prepend() threads
@@ -2685,7 +2685,7 @@ Morebits.wiki.page = function(pageName, currentAction) {
 		var pageTitle, token;
 
 		if (fnCanUseMwUserToken('delete')) {
-			token = mw.user.tokens.get('editToken');
+			token = mw.user.tokens.get('csrfToken');
 			pageTitle = ctx.pageName;
 		} else {
 			var xml = ctx.deleteApi.getXML();
@@ -3062,7 +3062,7 @@ Morebits.wiki.flow = function(pageName, currentAction) {
 		var query = {
 			action: 'flow',
 			page: ctx.pageName,
-			token: mw.user.tokens.get('editToken'),
+			token: mw.user.tokens.get('csrfToken'),
 			submodule: 'new-topic',
 			nttopic: ctx.topic,
 			ntcontent: ctx.content,
@@ -3107,7 +3107,7 @@ Morebits.wiki.flow = function(pageName, currentAction) {
 		var query = {
 			action: 'flow',
 			page: ctx.pageName,
-			token: mw.user.tokens.get('editToken'),
+			token: mw.user.tokens.get('csrfToken'),
 			submodule: 'edit-header',
 			ehprev_revision: ctx.headerLastRevision,
 			ehcontent: ctx.header,

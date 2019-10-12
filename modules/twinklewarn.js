@@ -135,7 +135,7 @@ Twinkle.warn.callback = function twinklewarnCallback() {
 		type: 'input',
 		name: 'article',
 		label: wgULS('页面链接', '頁面連結'),
-		value: Morebits.queryString.exists('vanarticle') ? Morebits.queryString.get('vanarticle') : '',
+		value: mw.util.getParamValue('vanarticle') || '',
 		tooltip: wgULS('给模板中加入一页面链接，可留空。', '給模板中加入一頁面連結，可留空。')
 	});
 

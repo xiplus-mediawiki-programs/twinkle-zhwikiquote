@@ -9,9 +9,8 @@
  *** friendlytag.js: Tag module
  ****************************************
  * Mode of invocation:     Tab ("Tag")
- * Active on:              Existing articles;
- *                         all redirects
- * Config directives in:   FriendlyConfig
+ * Active on:              Existing articles and drafts; file pages with a corresponding file
+ *                         which is local (not on Commons); all redirects
  */
 
 Twinkle.tag = function friendlytag() {
@@ -47,7 +46,7 @@ Twinkle.tag.callback = function friendlytagCallback() {
 					label: wgULS('标记页面为已巡查', '標記頁面為已巡查'),
 					value: 'patrolPage',
 					name: 'patrolPage',
-					checked: Twinkle.getFriendlyPref('markTaggedPagesAsPatrolled')
+					checked: Twinkle.getPref('markTaggedPagesAsPatrolled')
 				}
 			]
 		});
@@ -65,8 +64,8 @@ Twinkle.tag.callback = function friendlytagCallback() {
 				tooltip: wgULS('您可以在Twinkle参数设置（WP:TWPREFS）中更改此项。', '您可以在Twinkle偏好設定（WP:TWPREFS）中更改此項。'),
 				event: Twinkle.tag.updateSortOrder,
 				list: [
-					{ type: 'option', value: 'cat', label: wgULS('按类别', '按類別'), selected: Twinkle.getFriendlyPref('tagArticleSortOrder') === 'cat' },
-					{ type: 'option', value: 'alpha', label: '按字母', selected: Twinkle.getFriendlyPref('tagArticleSortOrder') === 'alpha' }
+					{ type: 'option', value: 'cat', label: wgULS('按类别', '按類別'), selected: Twinkle.getPref('tagArticleSortOrder') === 'cat' },
+					{ type: 'option', value: 'alpha', label: '按字母', selected: Twinkle.getPref('tagArticleSortOrder') === 'alpha' }
 				]
 			});
 
@@ -86,7 +85,7 @@ Twinkle.tag.callback = function friendlytagCallback() {
 						name: 'group',
 						tooltip: wgULS('如果添加{{multiple issues}}支持的三个以上的模板，所有支持的模板都会被合并入{{multiple issues}}模板中。',
 							'如果添加{{multiple issues}}支持的三個以上的模板，所有支持的模板都會被合並入{{multiple issues}}模板中。'),
-						checked: Twinkle.getFriendlyPref('groupByDefault')
+						checked: Twinkle.getPref('groupByDefault')
 					}
 				]
 			}
@@ -320,10 +319,10 @@ Twinkle.tag.updateSortOrder = function(e) {
 	}
 
 	// append any custom tags
-	if (Twinkle.getFriendlyPref('customTagList').length) {
+	if (Twinkle.getPref('customTagList').length) {
 		container.append({ type: 'header', label: wgULS('自定义模板', '自訂模板') });
 		var customcheckboxes = [];
-		$.each(Twinkle.getFriendlyPref('customTagList'), function(_, item) {
+		$.each(Twinkle.getPref('customTagList'), function(_, item) {
 			customcheckboxes.push(makeCheckbox(item.value, item.label));
 		});
 		container.append({
@@ -1267,8 +1266,8 @@ Twinkle.tag.callbacks = {
 		pageobj.setPageText(pageText);
 		pageobj.setEditSummary(summaryText + Twinkle.getPref('summaryAd'));
 		pageobj.setTags(Twinkle.getPref('revisionTags'));
-		pageobj.setWatchlist(Twinkle.getFriendlyPref('watchTaggedPages'));
-		pageobj.setMinorEdit(Twinkle.getFriendlyPref('markTaggedPagesAsMinor'));
+		pageobj.setWatchlist(Twinkle.getPref('watchTaggedPages'));
+		pageobj.setMinorEdit(Twinkle.getPref('markTaggedPagesAsMinor'));
 		pageobj.setCreateOption('nocreate');
 		pageobj.save(function() {
 			// special functions for merge tags
@@ -1442,8 +1441,8 @@ Twinkle.tag.callbacks = {
 		pageobj.setPageText(text);
 		pageobj.setEditSummary(summary.substring(0, summary.length - 2) + Twinkle.getPref('summaryAd'));
 		pageobj.setTags(Twinkle.getPref('revisionTags'));
-		pageobj.setWatchlist(Twinkle.getFriendlyPref('watchTaggedPages'));
-		pageobj.setMinorEdit(Twinkle.getFriendlyPref('markTaggedPagesAsMinor'));
+		pageobj.setWatchlist(Twinkle.getPref('watchTaggedPages'));
+		pageobj.setMinorEdit(Twinkle.getPref('markTaggedPagesAsMinor'));
 		pageobj.setCreateOption('nocreate');
 		pageobj.save();
 
